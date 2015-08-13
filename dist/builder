@@ -1,8 +1,11 @@
 module.exports = {
     
+    new: function(){
+        Game.spawns.Spawn1.createCreep([WORK, MOVE, CARRY], null, {role: 'harvester'});
+    }
+    
     behavior: function(creep){
-
-    if (creep.carry.energy == 0 || creep.carry.energy == 1){
+        if (creep.carry.energy == 0 || creep.carry.energy == 1){
             creep.moveTo(Game.spawns.Spawn1);
             Game.spawns.Spawn1.transferEnergy(creep);
         }else{
@@ -12,4 +15,5 @@ module.exports = {
                 creep.build(targets[0]);
             }
         }
+    }    
 }
