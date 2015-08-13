@@ -3,7 +3,7 @@ module.exports = {
 	new: function() {
 		Game.spawns.Spawn1.createCreep([TOUGH, MOVE, MOVE, ATTACK], null, {role: 'guard'});
 	}
-	
+
 	behaviour: function(creep){
 		var targets = creep.room.find(FIND_HOSTILE_CREEPS);
 		if (targets.length){

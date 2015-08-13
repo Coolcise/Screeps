@@ -5,5 +5,5 @@ module.exports = {
     currentRoom.harvesterArray = [];
     currentRoom.builderArray = [];
     currentRoom.guardArray = [];
-  }  
+  }
 }
