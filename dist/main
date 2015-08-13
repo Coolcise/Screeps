@@ -8,14 +8,14 @@ TODO:
 >Creep upgrades
 >Defense
 >Maintenance
+  >Creep
 */
 
 
 var harvester = require('harvester');
 var builder = require('builder');
 var guard = require('guard');
-var newCreep = require('newCreep');
-var startup = require('startup');
+var inits = require('inits');
 
 
 for (var name in Game.creeps){
