@@ -1,0 +1,23 @@
+var harvester = require('harvester');
+var builder = require('builder');
+var guard = require('guard');
+var newCreep = require('newCreep');
+var startup = require('startup');
+
+
+for (var name in Game.creeps){
+    var creep = Game.creeps[name];
+    
+    if (creep.memory.role == 'harvester'){
+        harvester.behavior(creep);
+    }
+    
+    if (creep.memory.role == 'builder'){
+        
+        builder.behavior(creep);
+    }
+    
+    if (creep.memory.role == 'guard'){
+        guard.behavior(creep);
+    }
+}
