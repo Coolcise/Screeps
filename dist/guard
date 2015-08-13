@@ -1,10 +1,14 @@
 module.exports = {
- 
-  behaviour: function(creep){
-   var targets = creep.room.find(FIND_HOSTILE_CREEPS);
-    if (targets.length){
-      creep.moveTo(targets[0]);
-      creep.attack(targets[0]);
-    }
-  }
+
+	new: function() {
+		Game.spawns.Spawn1.createCreep([TOUGH, MOVE, MOVE, ATTACK], null, {role: 'guard'});
+	}
+	
+	behaviour: function(creep){
+		var targets = creep.room.find(FIND_HOSTILE_CREEPS);
+		if (targets.length){
+			creep.moveTo(targets[0]);
+			creep.attack(targets[0]);
+		}
+	}
 }
