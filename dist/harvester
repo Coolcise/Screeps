@@ -1,10 +1,13 @@
 module.exports = {
 
   new: function() {
-  	Game.spawns.Spawn1.createCreep([WORK, MOVE, CARRY], null, {role: 'harvester'});
+  	Game.spawns.Spawn1.createCreep(this.parts, null, {role: 'harvester'});
   }
 
-  parts: Array() {[WORK, MOVE, CARRY]};
+  parts: function() {
+    var partArray = [WORK, MOVE, CARRY];
+    return partArray;
+  };
 
 	behavior: function(creep){
 		if (creep.carry.energy < creep.carryCapacity) {
