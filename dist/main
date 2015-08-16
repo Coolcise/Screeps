@@ -2,8 +2,13 @@
 TODO:
 >Make listing work
 >list locations, positions
->Pathfinding?
+>Pathfinding, list important sectors?
 >Construction building
+>globalCreepHandling
+  >spawning
+  >deleting
+  >manage memory (dead creeps)
+>mail system
 >Harvesting
 >Creep upgrades
 >Defense
