@@ -1,7 +1,7 @@
 module.exports = {
 
 	new: function() {
-		Game.spawns.Spawn1.createCreep([TOUGH, MOVE, MOVE, ATTACK], null, {role: 'guard'});
+		Game.spawns.Spawn1.createCreep(this.parts(), null, {role: 'guard'});
 	},
 
 	parts: function() {
