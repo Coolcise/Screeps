@@ -12,6 +12,10 @@ module.exports = {
 
   },
 
+  reassignCreep: function(creepID, newRole) {
+    
+  }
+
   killCreep: function(creepID) {
 
   }
