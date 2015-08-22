@@ -24,7 +24,9 @@ var builder = require('builder');
 var upgrader = require('upgrader');
 var guard = require('guard');
 var inits = require('inits');
+var maintenance = require('maintenance');
 
+maintenance.maintainCreepCount();
 
 for (var name in Game.creeps){
     var creep = Game.creeps[name];
@@ -37,7 +39,7 @@ for (var name in Game.creeps){
 
         builder.behavior(creep);
     }
-    
+
     if (creep.memory.role == 'upgrader'){
 
         upgrader.behavior(creep);
