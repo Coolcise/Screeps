@@ -21,6 +21,7 @@ TODO:
 
 var harvester = require('harvester');
 var builder = require('builder');
+var upgrader = require('upgrader');
 var guard = require('guard');
 var inits = require('inits');
 
@@ -35,6 +36,11 @@ for (var name in Game.creeps){
     if (creep.memory.role == 'builder'){
 
         builder.behavior(creep);
+    }
+    
+    if (creep.memory.role == 'upgrader'){
+
+        upgrader.behavior(creep);
     }
 
     if (creep.memory.role == 'guard'){
