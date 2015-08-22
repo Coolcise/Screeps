@@ -16,7 +16,7 @@ module.exports = {
         }
     },
 
-    newConstruction: function(structure, toPosX, toPosY, fromPosX, fromPosY, room){
+    newConstructionSite: function(structure, toPosX, toPosY, fromPosX, fromPosY, room){
       if (!room){
         var room = Game.rooms.W9S11;
       }
@@ -27,17 +27,17 @@ module.exports = {
 
       if (fromPosX && fromPosY) {
         var fromPos = new RoomPosition(fromPosX, fromPosY, room);
-        path = FindPath(fromPos, toPos);
+        path = room.findPath(fromPos, toPos);
         console.log(path);
       }
 
       if(path) {
         for(i = 0; i < path.length; i++){
-          room.createConstruction(path[i], structure);
+          room.createConstructionSite(path[i], structure);
         }
       }
       else{
-        room.createConstruction(toPos, structure);
+        room.createConstructionSite(toPos, structure);
       }
 
     }
