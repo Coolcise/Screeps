@@ -34,7 +34,7 @@ module.exports = {
     }
     else if (upgraderCount < Memory.rooms.W9S11.upgraders)
       globalFunctions.spawnCreep('upgrader');
-  }
+  },
 
   deadCreepMemory: function() {
 
