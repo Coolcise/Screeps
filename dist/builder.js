@@ -14,7 +14,7 @@ module.exports = {
                 creep.build(targets[0]);
             }
         }
-    }
+    },
 
     newConstruction: function(structure, toPosX, toPosY, fromPosX, fromPosY, room){
       if (!room){
@@ -28,6 +28,7 @@ module.exports = {
       if (fromPosX && fromPosY) {
         var fromPos = new RoomPosition(fromPosX, fromPosY, room);
         path = FindPath(fromPos, toPos);
+        console.log(path);
       }
 
       if(path) {

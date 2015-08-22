@@ -1,8 +1,3 @@
-/*
-TODO:
->Add creepLib
-*/
-
 module.exports = {
 
 	getCost: function(parts) {
@@ -29,7 +24,6 @@ module.exports = {
 		parts['builder'] = ['builder', [WORK, WORK, CARRY, MOVE]];
 		parts['upgrader'] = ['upgrader', [WORK, WORK, CARRY, MOVE]];
 		parts['guard'] = ['guard', [TOUGH, MOVE, MOVE, ATTACK]];
-		parts['pathfinder'] = ['pathfinder', [MOVE, MOVE, MOVE, MOVE]];
 
     return parts[creepType];
 
