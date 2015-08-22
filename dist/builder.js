@@ -1,9 +1,5 @@
 module.exports = {
 
-    new: function(){
-        Game.spawns.Spawn1.createCreep(this.parts(), null, {role: 'builder'});
-    },
-
     behavior: function(creep){
         if (creep.carry.energy == 0 || creep.carry.energy == 1){
             creep.moveTo(Game.spawns.Spawn1);
