@@ -24,7 +24,7 @@ module.exports = {
 		parts['builder'] = [WORK, WORK, CARRY, MOVE];
 		parts['upgrader'] = [WORK, WORK, CARRY, MOVE];
 		parts['guard'] = [TOUGH, MOVE, MOVE, ATTACK];
-		parts['carrier'] = [MOVE, MOVE, CARRY, CARRY, CARRY, CARRY]
+		parts['carrier'] = [MOVE, MOVE, CARRY, CARRY, CARRY, CARRY];
 
     return parts[creepType];
 
