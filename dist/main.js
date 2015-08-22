@@ -1,37 +1,51 @@
-var globalFunctions = require('globalFunctions');
+/*
+TODO:
+>Make listing work
+>list locations, positions
+>Pathfinding, list important sectors?
+>Construction building
+>globalCreepHandling
+  >spawning
+  >deleting
+  >manage memory (dead creeps)
+>mail system
+>Harvesting
+>Creep upgrades
+>Defense
+>Maintenance
+  >Creep
+  >structures
+>Upgrade controller
+*/
 
-module.exports = {
 
-    maintainCreepCount: function() {
+var harvester = require('harvester');
+var builder = require('builder');
+var upgrader = require('upgrader');
+var guard = require('guard');
+var inits = require('inits');
+var maintenance = require('maintenance');
 
-      var harvesterCount = 0;
-      var builderCount = 0;
-      var upgraderCount = 0;
+maintenance.maintainCreepCount();
 
-      for (var name in Game.creeps) {
-        var role = Game.creeps[name].memory.role;
-        switch(role){
-          case 'harvester':
-            harvesterCount++;
-            break;
-          case 'builder':
-            builderCount++;
-            break;
-          case 'upgrader':
-            upgraderCount++;
-            break;
-        }
-      }
+for (var name in Game.creeps){
+    var creep = Game.creeps[name];
 
-    //console.log(harvesterCount, builderCount, upgraderCount);
+    if (creep.memory.role == 'harvester'){
+        harvester.behavior(creep);
+    }
 
-      if (harvesterCount < Memory.rooms.W9S11.harvesters) {
-        globalFunctions.spawnCreep('harvester');
-      }
-      else if (builderCount < Memory.rooms.W9S11 .builders){
-        globalFunctions.spawnCreep('builder');
-      }
-      else if (upgraderCount < Memory.rooms.W9S11.upgraders)
-        globalFunctions.spawnCreep('upgrader');
+    if (creep.memory.role == 'builder'){
+
+        builder.behavior(creep);
+    }
+
+    if (creep.memory.role == 'upgrader'){
+
+        upgrader.behavior(creep);
+    }
+
+    if (creep.memory.role == 'guard'){
+        guard.behavior(creep);
     }
 }
