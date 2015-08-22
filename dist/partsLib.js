@@ -33,4 +33,5 @@ module.exports = {
 
     return parts[creepType];
 
+	}
 }
