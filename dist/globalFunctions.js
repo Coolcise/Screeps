@@ -7,11 +7,7 @@ module.exports = {
       location = Game.spawns.Spawn1;
     }
 
-    var parts = partsLib.getCreepParts(type)
-
-  }
-
-    var creepInfo = partsLib.getCreepParts();
+    var creepInfo = partsLib.getCreepParts(type);
     location.createCreep(creepInfo[1], null, {role: creepInfo[0]});
 
   },
