@@ -1,14 +1,5 @@
 module.exports = {
 
-	new: function() {
-		Game.spawns.Spawn1.createCreep(this.parts(), null, {role: 'guard'});
-	},
-
-	parts: function() {
-		var partArray = [TOUGH, MOVE, MOVE, ATTACK];
-		return partArray;
-	},
-
 	behaviour: function(creep){
 		var targets = creep.room.find(FIND_HOSTILE_CREEPS);
 		if (targets.length){
