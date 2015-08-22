@@ -20,10 +20,11 @@ module.exports = {
   getCreepParts: function(creepType) {
 
 		var parts = new Array();
-   	parts['harvester'] = ['harvester', [WORK, MOVE, CARRY]];
-		parts['builder'] = ['builder', [WORK, WORK, CARRY, MOVE]];
-		parts['upgrader'] = ['upgrader', [WORK, WORK, CARRY, MOVE]];
-		parts['guard'] = ['guard', [TOUGH, MOVE, MOVE, ATTACK]];
+   	parts['harvester'] = [WORK, WORK, MOVE, CARRY];
+		parts['builder'] = [WORK, WORK, CARRY, MOVE];
+		parts['upgrader'] = [WORK, WORK, CARRY, MOVE];
+		parts['guard'] = [TOUGH, MOVE, MOVE, ATTACK];
+		parts['carrier'] = [MOVE, MOVE, CARRY, CARRY, CARRY, CARRY]
 
     return parts[creepType];
 
