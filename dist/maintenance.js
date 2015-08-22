@@ -24,6 +24,8 @@ module.exports = {
         }
       }
 
+      console.log(harvesterCount, builderCount, upgraderCount);
+
       if (harvesterCount < Memory.rooms.W9S11.harvesters) {
         globalFunctions.spawnCreep('harvester');
       }
