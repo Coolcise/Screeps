@@ -7,7 +7,7 @@ module.exports = {
 
         }
         else{
-            var target = Game.rooms.W9S11.controller;
+            var targets = creep.room.find;
             if (target){
                 creep.moveTo(target);
                 creep.upgradeController(target);
