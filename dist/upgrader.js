@@ -1,12 +1,15 @@
 module.exports = {
 
     behavior: function(creep){
-        if (creep.carry.energy == 0 || creep.carry.energy == 1){
+        if (creep.carry.energy == 0){
             creep.moveTo(Game.spawns.Spawn1);
-            Game.spawns.Spawn1.transferEnergy(creep);
-        }else{
-            var target = new RoomPosition(18, 5, W9S11);
-            if (targets.length){
+            if (Game.spawns.Spawn1.energy >= creep.carryCapacity){
+              Game.spawns.Spawn1.transferEnergy(creep);
+            }
+        }
+        else{
+            var target = Game.rooms.W9S11.controller;
+            if (target){
                 creep.moveTo(target);
                 creep.upgradeController(target);
             }
