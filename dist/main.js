@@ -1,24 +1,3 @@
-/*
-TODO:
->Make listing work
->list locations, positions
->Pathfinding, list important sectors?
->Construction building
->globalCreepHandling
-  >spawning
-  >deleting
-  >manage memory (dead creeps)
->mail system
->Harvesting
->Creep upgrades
->Defense
->Maintenance
-  >Creep
-  >structures
->Upgrade controller
-*/
-
-
 var harvester = require('harvester');
 var builder = require('builder');
 var upgrader = require('upgrader');
