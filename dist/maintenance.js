@@ -4,7 +4,7 @@ var roomMemory = Memory.rooms.roomName;
 
 module.exports = {
 
-  maintainCreepCount: function(roomName) {
+  maintainCreepCount: function() {
 
     var harvesterCount = 0;
     var builderCount = 0;
@@ -25,30 +25,20 @@ module.exports = {
       }
     }
 
-    if (harvesterCount < roomMemory.harvesters) {
+    if (harvesterCount < Memory.rooms.W9S11.harvesters) {
       globalFunctions.spawnCreep('harvester');
     }
-    else if (builderCount < roomMemory .builders){
+    else if (builderCount < Memory.rooms.W9S11.builders){
       globalFunctions.spawnCreep('builder');
     }
-    else if (upgraderCount < roomMemory.upgraders)
+    else if (upgraderCount < Memory.rooms.W9S11.upgraders)
     globalFunctions.spawnCreep('upgrader');
   },
 
-  updateArrays: function(roomName) {
-
-    initArrays(roomName);
+  updateCreepArrays: function() {
 
     deadCreepMemory();
 
-    var allStructures = Game.rooms.roomName.find(FIND_MY_STRUCTURES);
-
-    for (var structure in allStructures) {
-      if ((structure.structureType === STUCTURE_EXTENSION)
-      && !(roomMemory.extensionsArray[structure])) {
-        roomMemory.extensionsArray.push(structure);
-      }
-    }
   },
 
   deadCreepMemory: function() {
@@ -62,32 +52,41 @@ module.exports = {
 
   initArrays: function(roomName) {
 
-    if (!roomMemory.harvesterArray){
-      roomMemory.harvesterArray = new Array();
+    if (!Memory.rooms.W9S11.harvesterArray){
+      Memory.rooms.W9S11.harvesterArray = new Array();
     }
 
-    if (!roomMemory.builderArray) {
-      roomMemory.builderArray = new Array();
+    if (!Memory.rooms.W9S11.builderArray) {
+      Memory.rooms.W9S11.builderArray = new Array();
     }
 
-    if(!roomMemory.upgraderArray){
-      roomMemory.upgraderArray = new Array();
+    if(!Memory.rooms.W9S11.upgraderArray){
+      Memory.rooms.W9S11.upgraderArray = new Array();
     }
 
-    if (!roomMemory.carrierArray){
-      roomMemory.carrierArray = new Array();
+    if (!Memory.rooms.W9S11.carrierArray){
+      Memory.rooms.W9S11.carrierArray = new Array();
     }
 
-    if(!roomMemory.guardArray){
-      roomMemory.guardArray = new Array();
+    if(!Memory.rooms.W9S11.guardArray){
+      Memory.rooms.W9S11.guardArray = new Array();
     }
 
-    if(!roomMemory.extensionsArray){
-      roomMemory.extensionsArray = new Array();
+    if(!Memory.rooms.W9S11.extensionsArray){
+      Memory.rooms.W9S11.extensionsArray = new Array();
     }
 
-    if(!roomMemory.spawnQueue){
-      roomMemory.spawnQueue = new Array();
+    if(!Memory.rooms.W9S11.spawnQueue){
+      Memory.rooms.W9S11.spawnQueue = new Array();
+    }
+
+    var allStructures = Game.rooms.roomName.find(FIND_MY_STRUCTURES);
+
+    for (var structure in allStructures) {
+      if ((structure.structureType === STUCTURE_EXTENSION)
+      && !(Memory.rooms.W9S11.extensionsArray[structure])) {
+        Memory.rooms.W9S11.extensionsArray.push(structure);
+      }
     }
   }
 

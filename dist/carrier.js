@@ -9,10 +9,15 @@ module.exports = {
 
     }
     else{
-      var targets = Memory.rooms.;
-      if (target){
-        creep.moveTo(target);
-        creep.upgradeController(target);
+      var targets = Memory.rooms.W9S11.extensionsArray;
+
+      for (var extension in targets) {
+        var energyAmount = targets[extension].energy;
+        if (energyAmount < targets[extension].energyCapacity){
+          creep.moveTo(targets[extension]);
+          creep.transferEnergy(target[extension]);
+          break;
+        }
       }
     }
   }

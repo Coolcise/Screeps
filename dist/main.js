@@ -1,16 +1,14 @@
 var harvester = require('harvester');
 var builder = require('builder');
 var upgrader = require('upgrader');
+var carrier = require('carrier');
 var guard = require('guard');
 var maintenance = require('maintenance');
 
 maintenance.maintainCreepCount();
 
-if (!(Game.time % 50)){
-  for (var roomName in Game.rooms) {
-    var roomName = Game.rooms[roomName];
-    maintenance.updateArrays(roomName)
-  }
+if (!(Game.time % 10)){
+    maintenance.updateCreepArrays()
 }
 
 for (var name in Game.creeps){

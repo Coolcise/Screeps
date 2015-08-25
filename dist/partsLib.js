@@ -21,10 +21,10 @@ module.exports = {
 
 		var parts = new Array();
 
-
+/*
 		//Add more variants when higher room level is aquired and update for more rooms
 		if(Memory.rooms.W9S11.extensionsArray.length >= 10) {						//800 energy max
-			
+
 			parts['harvester']	=	[	WORK, WORK, WORK, WORK, WORK, WORK,
 															CARRY, CARRY, CARRY,
 															MOVE	];
@@ -55,7 +55,7 @@ module.exports = {
 			parts['guard'] 			= [	ATTACK, TOUGH, MOVE, MOVE	];			//TBD
 
 		}
-		else{
+		else{*/
 																													//300 energy max
 			parts['harvester'] 		= [	WORK, WORK,  CARRY, MOVE	];
 			parts['builder'] 			= [	WORK, WORK, CARRY, MOVE	];
@@ -64,7 +64,7 @@ module.exports = {
 			parts['mule']					= [	CARRY, CARRY, CARRY, CARRY, CARRY, MOVE	];
 			parts['guard'] 				= [	ATTACK, TOUGH, MOVE, MOVE	];
 
-		}
+	//	}
 
 		return parts[creepType];
 
