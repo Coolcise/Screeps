@@ -6,7 +6,7 @@ module.exports = {
     if (!location){
       location = Game.spawns.Spawn1;
     }
-    
+
     var parts = partsLib.getCreepParts(type);
 
     if (Game.spawns.Spawn1.energy >= partsLib.getCost(parts)){
