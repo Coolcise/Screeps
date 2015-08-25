@@ -29,4 +29,8 @@ for (var name in Game.creeps){
   if (creep.memory.role == 'guard'){
     guard.behavior(creep);
   }
+
+  if (creep.memory.role == 'carrier'){
+    carrier.behavior(creep);
+  }
 }
