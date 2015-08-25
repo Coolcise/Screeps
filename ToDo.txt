@@ -1,4 +1,10 @@
+Next:
+>Spawn queue
+>build roads
+
+
 ToImplement:
+>miners and mules instead of harvesters
 >Make listing work
   >list locations, positions
 >Pathfinding, list important sectors?
@@ -7,14 +13,12 @@ ToImplement:
 >globalCreepHandling
   >deleting
 >Mail system
-
 >Defense
 >Maintenance
   >Make builders do maintenance
 
 
 ToImprove:
->Improve creep tier
 >Harvesting
   >Add second source
 >globalCreepHandling
