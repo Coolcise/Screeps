@@ -19,7 +19,7 @@ module.exports = {
     var builderCount = 0;
     var upgraderCount = 0;
     var carrierCount = 0;
-    var guardCound = 0;
+    var guardCount = 0;
 
     for (var name in Game.creeps) {
       var role = Game.creeps[name].memory.role;
@@ -64,19 +64,19 @@ module.exports = {
     }
 
     if (harvesterCount < Memory.rooms.W8S17.harvesters) {
-      Memory.rooms.W8S17.spawnQueue('harvester');
+      Memory.rooms.W8S17.spawnQueue.push('harvester');
     }
     else if (carrierCount < Memory.rooms.W8S17.carriers) {
-      Memory.rooms.W8S17.spawnQueue('carrier');
+      Memory.rooms.W8S17.spawnQueue.push('carrier');
     }
     else if (upgraderCount < Memory.rooms.W8S17.guards) {
-      Memory.rooms.W8S17.spawnQueue('guard');
+      Memory.rooms.W8S17.spawnQueue.push('guard');
     }
     else if (builderCount < Memory.rooms.W8S17.builders) {
-      Memory.rooms.W8S17.spawnQueue('builder');
+      Memory.rooms.W8S17.spawnQueue.push('builder');
     }
     else if (upgraderCount < Memory.rooms.W8S17.upgraders) {
-      Memory.rooms.W8S17.spawnQueue('upgrader');
+      Memory.rooms.W8S17.spawnQueue.push('upgrader');
     }
 
   },
@@ -148,6 +148,6 @@ module.exports = {
         Memory.rooms.W8S17.extensionsArray.push(structure.pos);
       }
     }
-  }
+  },
 
 }
