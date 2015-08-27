@@ -91,51 +91,51 @@ module.exports = {
 
   initArrays: function() {
 
-    if (!(Memory.rooms.W8S17.harvesterArray === undefined)){
+    if (Memory.rooms.W8S17.harvesterArray === undefined){
       Memory.rooms.W8S17.harvesterArray = new Array();
     }
 
-    if (!(Memory.rooms.W8S17.builderArray === undefined)) {
+    if (Memory.rooms.W8S17.builderArray === undefined) {
       Memory.rooms.W8S17.builderArray = new Array();
     }
 
-    if(!(Memory.rooms.W8S17.upgraderArray === undefined)) {
+    if(Memory.rooms.W8S17.upgraderArray === undefined) {
       Memory.rooms.W8S17.upgraderArray = new Array();
     }
 
-    if (!(Memory.rooms.W8S17.carrierArray === undefined)) {
+    if (Memory.rooms.W8S17.carrierArray === undefined) {
       Memory.rooms.W8S17.carrierArray = new Array();
     }
 
-    if(!(Memory.rooms.W8S17.guardArray === undefined)) {
+    if(Memory.rooms.W8S17.guardArray === undefined) {
       Memory.rooms.W8S17.guardArray = new Array();
     }
 
-    if(!(Memory.rooms.W8S17.extensionsArray === undefined)) {
+    if(Memory.rooms.W8S17.extensionsArray === undefined) {
       Memory.rooms.W8S17.extensionsArray = new Array();
     }
 
-    if(!(Memory.rooms.W8S17.spawnQueue === undefined)) {
+    if(Memory.rooms.W8S17.spawnQueue === undefined) {
       Memory.rooms.W8S17.spawnQueue = new Array();
     }
 
-    if(!(Memory.rooms.W8S17.harvesters === undefined)) {
+    if(Memory.rooms.W8S17.harvesters === undefined) {
       Memory.rooms.W8S17.harvesters = 3;
     }
 
-    if(!(Memory.rooms.W8S17.carriers === undefined)) {
+    if(Memory.rooms.W8S17.carriers === undefined) {
       Memory.rooms.W8S17.carriers = 1;
     }
 
-    if(!(Memory.rooms.W8S17.builders === undefined)) {
+    if(Memory.rooms.W8S17.builders === undefined) {
       Memory.rooms.W8S17.builders = 0;
     }
 
-    if(!(Memory.rooms.W8S17.upgraders === undefined)) {
+    if(Memory.rooms.W8S17.upgraders === undefined) {
       Memory.rooms.W8S17.upgraders = 5;
     }
 
-    if(!(Memory.rooms.W8S17.guards === undefined)) {
+    if(Memory.rooms.W8S17.guards === undefined) {
       Memory.rooms.W8S17.guards = 0;
     }
 
