@@ -16,6 +16,7 @@ module.exports = {
         }
 
       }
+    }
       else{
         var targets = Memory.rooms.E12N6.extensionsArray;
 
