@@ -1,12 +1,15 @@
 Next:
 >Spawn queue
+>extensionsArray
+  >store pos instead of obj (DOESN'T WORK)
 >build roads
-
+>worker/mule-pairs
+  >Replacing harvesters and upgraders
+  >Make listing work
+    >list locations, positions
+>clean up code and modules
 
 ToImplement:
->miners and mules instead of harvesters
->Make listing work
-  >list locations, positions
 >Pathfinding, list important sectors?
 >Construct buildings
   >Paths for roads

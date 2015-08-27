@@ -6,7 +6,7 @@ module.exports = {
     if (!location){
       location = Game.spawns.Spawn1;
     }
-    
+
     var parts = partsLib.getCreepParts(type);
 
     if (Game.spawns.Spawn1.energy >= partsLib.getCost(parts)){
@@ -17,7 +17,7 @@ module.exports = {
 
   newConstructionSite: function(structure, toPosX, toPosY, fromPosX, fromPosY, room){
     if (!room){
-      var room = Game.rooms.W9S11;
+      var room = Game.rooms.W8S17;
     }
 
     var path = false;

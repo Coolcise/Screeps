@@ -7,8 +7,8 @@ var maintenance = require('maintenance');
 
 maintenance.maintainCreepCount();
 
-if (!(Game.time % 10)){
-    maintenance.updateCreepArrays()
+if (!(Game.time % 10) && !(Game.spawns.Spawn1.spawning)){
+    maintenance.deadCreepMemory()
 }
 
 for (var name in Game.creeps){

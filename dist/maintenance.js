@@ -18,7 +18,8 @@ module.exports = {
     var harvesterCount = 0;
     var builderCount = 0;
     var upgraderCount = 0;
-    var carrierCount = 0
+    var carrierCount = 0;
+    var guardCound = 0;
 
     for (var name in Game.creeps) {
       var role = Game.creeps[name].memory.role;
@@ -35,25 +36,54 @@ module.exports = {
         case 'carrier':
           carrierCount++;
           break;
+        case 'guard':
+          guardCount++;
+          break;
       }
     }
 
-    if (harvesterCount < Memory.rooms.W9S11.harvesters) {
-      globalFunctions.spawnCreep('harvester');
+    for (var type in Memory.rooms.W8S17.spawnQueue) {
+      var role = Memory.rooms.W8S17.spawnQueue[type];
+      switch(role){
+        case 'harvester':
+          harvesterCount++;
+          break;
+        case 'builder':
+          builderCount++;
+          break;
+        case 'upgrader':
+          upgraderCount++;
+          break;
+        case 'carrier':
+          carrierCount++;
+          break;
+        case 'guard':
+          guardCount++;
+          break;
+      }
     }
-    else if (carrierCount < Memory.rooms.W9S11.carriers){
-      globalFunctions.spawnCreep('carrier');
+
+    if (harvesterCount < Memory.rooms.W8S17.harvesters) {
+      Memory.rooms.W8S17.spawnQueue('harvester');
     }
-    else if (builderCount < Memory.rooms.W9S11.builders){
-      globalFunctions.spawnCreep('builder');
+    else if (carrierCount < Memory.rooms.W8S17.carriers) {
+      Memory.rooms.W8S17.spawnQueue('carrier');
     }
-    else if (upgraderCount < Memory.rooms.W9S11.upgraders)
-    globalFunctions.spawnCreep('upgrader');
+    else if (upgraderCount < Memory.rooms.W8S17.guards) {
+      Memory.rooms.W8S17.spawnQueue('guard');
+    }
+    else if (builderCount < Memory.rooms.W8S17.builders) {
+      Memory.rooms.W8S17.spawnQueue('builder');
+    }
+    else if (upgraderCount < Memory.rooms.W8S17.upgraders) {
+      Memory.rooms.W8S17.spawnQueue('upgrader');
+    }
+
   },
 
   updateCreepArrays: function() {
 
-    this.deadCreepMemory();
+  
 
   },
 
@@ -61,41 +91,61 @@ module.exports = {
 
   initArrays: function() {
 
-    if (!Memory.rooms.W9S11.harvesterArray){
-      Memory.rooms.W9S11.harvesterArray = new Array();
+    if (!Memory.rooms.W8S17.harvesterArray){
+      Memory.rooms.W8S17.harvesterArray = new Array();
     }
 
-    if (!Memory.rooms.W9S11.builderArray) {
-      Memory.rooms.W9S11.builderArray = new Array();
+    if (!Memory.rooms.W8S17.builderArray) {
+      Memory.rooms.W8S17.builderArray = new Array();
     }
 
-    if(!Memory.rooms.W9S11.upgraderArray){
-      Memory.rooms.W9S11.upgraderArray = new Array();
+    if(!Memory.rooms.W8S17.upgraderArray){
+      Memory.rooms.W8S17.upgraderArray = new Array();
     }
 
-    if (!Memory.rooms.W9S11.carrierArray){
-      Memory.rooms.W9S11.carrierArray = new Array();
+    if (!Memory.rooms.W8S17.carrierArray){
+      Memory.rooms.W8S17.carrierArray = new Array();
     }
 
-    if(!Memory.rooms.W9S11.guardArray){
-      Memory.rooms.W9S11.guardArray = new Array();
+    if(!Memory.rooms.W8S17.guardArray){
+      Memory.rooms.W8S17.guardArray = new Array();
     }
 
-    if(!Memory.rooms.W9S11.extensionsArray){
-      Memory.rooms.W9S11.extensionsArray = new Array();
+    if(!Memory.rooms.W8S17.extensionsArray){
+      Memory.rooms.W8S17.extensionsArray = new Array();
     }
 
-    if(!Memory.rooms.W9S11.spawnQueue){
-      Memory.rooms.W9S11.spawnQueue = new Array();
+    if(!Memory.rooms.W8S17.spawnQueue){
+      Memory.rooms.W8S17.spawnQueue = new Array();
     }
 
-    var allStructures = Game.rooms.W9S11.find(FIND_MY_STRUCTURES);
+    if(!Memory.rooms.W8S17.harvesters){
+      Memory.rooms.W8S17.harvesters = 3;
+    }
+
+    if(!Memory.rooms.W8S17.carriers){
+      Memory.rooms.W8S17.carriers = 1;
+    }
+
+    if(!Memory.rooms.W8S17.builders){
+      Memory.rooms.W8S17.builders = 0;
+    }
+
+    if(!Memory.rooms.W8S17.upgraders){
+      Memory.rooms.W8S17.upgraders = 5;
+    }
+
+    if(!Memory.rooms.W8S17.guards){
+      Memory.rooms.W8S17.guards = 0;
+    }
+
+    var allStructures = Game.rooms.W8S17.find(FIND_MY_STRUCTURES);
 
     for (var structure in allStructures) {
 
       if ((allStructures[structure].structureType === STRUCTURE_EXTENSION)
-      && !(Memory.rooms.W9S11.extensionsArray[structure])) {
-        Memory.rooms.W9S11.extensionsArray.push(structure);
+      && !(Memory.rooms.W8S17.extensionsArray[structure])) {
+        Memory.rooms.W8S17.extensionsArray.push(structure.pos);
       }
     }
   }

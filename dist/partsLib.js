@@ -21,28 +21,29 @@ module.exports = {
 
 		var parts = new Array();
 
-/*
-		//Add more variants when higher room level is aquired and update for more rooms
-		if(Memory.rooms.W9S11.extensionsArray.length >= 10) {						//800 energy max
 
-			parts['harvester']	=	[	WORK, WORK, WORK, WORK, WORK, WORK,
+		//Add more variants when higher room level is aquired and update for more rooms
+		if(Memory.rooms.W8S17.extensionsArray.length >= 10) {						//800 energy max
+
+			parts['harvester']	=	[	WORK, WORK, WORK, WORK, WORK, CARRY,
 															CARRY, CARRY, CARRY,
-															MOVE	];
+															MOVE, MOVE	];
 			parts['builder'] 		=	[	WORK, WORK, WORK, WORK,
 															CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
 															MOVE, MOVE	];
-			parts['upgrader'] 	= [	WORK, WORK, WORK, WORK, WORK, WORK, WORK,
-															CARRY, MOVE	];
+			parts['upgrader'] 	= [	WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY,
+															CARRY, MOVE, MOVE, MOVE	];
 			parts['carrier']		=	[	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
 															CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
 															MOVE, MOVE, MOVE	];
 			parts['mule']				= [	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
 															CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
 															CARRY, MOVE	];
-			parts['guard'] 			=	[	ATTACK, TOUGH, MOVE, MOVE];			//TBD
+			parts['guard'] 			=	[	ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE,
+															MOVE, MOVE, MOVE, MOVE, MOVE ];
 
 		}
-		else if(Memory.rooms.W9S11.extensionsArray.length >= 5) {				//550 energy max
+		else if(Memory.rooms.W8S17.extensionsArray.length >= 5) {				//550 energy max
 
 			parts['harvester'] 	= [	WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE	];
 			parts['builder'] 		= [	WORK, WORK, WORK, CARRY, CARRY, CARRY,
@@ -55,7 +56,7 @@ module.exports = {
 			parts['guard'] 			= [	ATTACK, TOUGH, MOVE, MOVE	];			//TBD
 
 		}
-		else{*/
+		else{
 																													//300 energy max
 			parts['harvester'] 		= [	WORK, WORK,  CARRY, MOVE	];
 			parts['builder'] 			= [	WORK, WORK, CARRY, MOVE	];
@@ -64,7 +65,7 @@ module.exports = {
 			parts['mule']					= [	CARRY, CARRY, CARRY, CARRY, CARRY, MOVE	];
 			parts['guard'] 				= [	ATTACK, TOUGH, MOVE, MOVE	];
 
-	//	}
+		}
 
 		return parts[creepType];
 

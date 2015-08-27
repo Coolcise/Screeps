@@ -9,16 +9,16 @@ module.exports = {
 
     }
     else{
-      var targets = Memory.rooms.W9S11.extensionsArray;
+      var targets = Memory.rooms.W8S17.extensionsArray;
 
-    //console.log(Memory.rooms.W9S11.extensionsArray[0].energy)
+    //console.log(Memory.rooms.W8S17.extensionsArray[0].energy)
 
       //for (var extension in targets) {
         //var energyAmount = targets[extension].energy;
        // console.log(energyAmount);
         //if ((energyAmount === undefined) || (energyAmount < targets[extension].energyCapacity)){
          // console.log(targets[extension]);
-         var allStructures = Game.rooms.W9S11.find(FIND_MY_STRUCTURES);
+         var allStructures = Game.rooms.W8S17.find(FIND_MY_STRUCTURES);
 
     for (var structure in allStructures) {
 
