@@ -1,5 +1,5 @@
 var globalFunctions = require('globalFunctions');
-
+var partsLib = require('partsLib');
 
 
 module.exports = {
@@ -79,9 +79,9 @@ module.exports = {
       Memory.rooms.W8S17.spawnQueue.push('upgrader');
     }
 
-    if (!(Memory.rooms.W8S17.spawnQueue.length) &&
-          Game.spawns.Spawn1.canCreateCreep(globalFunctions.getCost(Memory.rooms.W8S17.spawnQueue[1]))) {
-      newCreep = Memory.rooms.W8S17.splice(0,1);
+    if (!(Memory.rooms.W8S17.spawnQueue.length === undefined || !(Memory.rooms.W8S17.spawnQueue.length))&&
+    Game.spawns.Spawn1.canCreateCreep(partsLib.getCost(Memory.rooms.W8S17.spawnQueue[0]))) {
+      newCreep = Memory.rooms.W8S17.spawnQueue.splice(0,1);
       globalFunctions.spawnCreep(newCreep);
     }
 

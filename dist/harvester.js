@@ -3,8 +3,8 @@ module.exports = {
 	behavior: function(creep){
 		if (creep.carry.energy < creep.carryCapacity) {
 			var sources = creep.room.find(FIND_SOURCES);
-			creep.moveTo(sources[1]);
-			creep.harvest(sources[1]);
+			creep.moveTo(sources[0]);
+			creep.harvest(sources[0]);
 		}
 		else{
 			creep.moveTo(Game.spawns.Spawn1);
