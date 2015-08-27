@@ -79,6 +79,12 @@ module.exports = {
       Memory.rooms.W8S17.spawnQueue.push('upgrader');
     }
 
+    if (!(Memory.rooms.W8S17.spawnQueue.length) &&
+          Game.spawns.Spawn1.canCreateCreep(globalFunctions.getCost(Memory.rooms.W8S17.spawnQueue[1]))) {
+      newCreep = Memory.rooms.W8S17.splice(0,1);
+      globalFunctions.spawnCreep(newCreep);
+    }
+
   },
 
   updateCreepArrays: function() {
