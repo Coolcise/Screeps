@@ -42,24 +42,26 @@ module.exports = {
       }
     }
 
-    for (var type in Memory.rooms.W8S17.spawnQueue) {
-      var role = Memory.rooms.W8S17.spawnQueue[type];
-      switch(role){
-        case 'harvester':
-          harvesterCount++;
-          break;
-        case 'builder':
-          builderCount++;
-          break;
-        case 'upgrader':
-          upgraderCount++;
-          break;
-        case 'carrier':
-          carrierCount++;
-          break;
-        case 'guard':
-          guardCount++;
-          break;
+    if (!(Memory.rooms.W8S17.spawnQueue === undefined)) {
+      for (var type in Memory.rooms.W8S17.spawnQueue) {
+        var role = Memory.rooms.W8S17.spawnQueue[type];
+        switch(role){
+          case 'harvester':
+            harvesterCount++;
+            break;
+          case 'builder':
+            builderCount++;
+            break;
+          case 'upgrader':
+            upgraderCount++;
+            break;
+          case 'carrier':
+            carrierCount++;
+            break;
+          case 'guard':
+            guardCount++;
+            break;
+        }
       }
     }
 
@@ -79,7 +81,7 @@ module.exports = {
       Memory.rooms.W8S17.spawnQueue.push('upgrader');
     }
 
-    if (!(Memory.rooms.W8S17.spawnQueue.length === undefined || !(Memory.rooms.W8S17.spawnQueue.length))&&
+    if (!(Memory.rooms.W8S17.spawnQueue === undefined || !(Memory.rooms.W8S17.spawnQueue.length))&&
     Game.spawns.Spawn1.canCreateCreep(partsLib.getCost(Memory.rooms.W8S17.spawnQueue[0]))) {
       newCreep = Memory.rooms.W8S17.spawnQueue.splice(0,1);
       globalFunctions.spawnCreep(newCreep);
