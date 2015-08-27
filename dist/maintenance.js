@@ -94,8 +94,8 @@ module.exports = {
       Memory.rooms.E12N6.spawnQueue.push('upgrader');
     }
 
-    if (!(Memory.rooms.E12N6.spawnQueue === undefined || Memory.rooms.E12N6.spawnQueue.length)&&
-    Game.spawns.Spawn1.canCreateCreep(partsLib.getCost(Memory.rooms.E12N6.spawnQueue[0]))) {
+    if (!(Memory.rooms.E12N6.spawnQueue === undefined || !(Memory.rooms.E12N6.spawnQueue.length))&&
+    !(Game.spawns.Spawn1.canCreateCreep(partsLib.getCreepParts(Memory.rooms.E12N6.spawnQueue[0])))) {
       newCreep = Memory.rooms.E12N6.spawnQueue.splice(0,1);
       console.log(newCreep);
       globalFunctions.spawnCreep(newCreep);
