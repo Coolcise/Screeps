@@ -52,9 +52,9 @@ module.exports = {
 
     }
 
-    if (!(Memory.rooms.W8S17.spawnQueue === undefined)) {
-      for (var queue in Memory.rooms.W8S17.spawnQueue) {
-        var role = Memory.rooms.W8S17.spawnQueue[queue];
+    if (!(Memory.rooms.E12N6.spawnQueue === undefined)) {
+      for (var queue in Memory.rooms.E12N6.spawnQueue) {
+        var role = Memory.rooms.E12N6.spawnQueue[queue];
 
         switch(role){
           case 'harvester':
@@ -76,27 +76,27 @@ module.exports = {
       }
     }
 
-    console.log(harvesterCount, builderCount, upgraderCount, guardCount);
+    //console.log(harvesterCount, builderCount, upgraderCount, guardCount);
 
-    if (harvesterCount < Memory.rooms.W8S17.harvesters) {
-      Memory.rooms.W8S17.spawnQueue.push('harvester');
+    if (harvesterCount < Memory.rooms.E12N6.harvesters) {
+      Memory.rooms.E12N6.spawnQueue.push('harvester');
     }
-    else if (carrierCount < Memory.rooms.W8S17.carriers) {
-      Memory.rooms.W8S17.spawnQueue.push('carrier');
+    else if (carrierCount < Memory.rooms.E12N6.carriers) {
+      Memory.rooms.E12N6.spawnQueue.push('carrier');
     }
-    else if (upgraderCount < Memory.rooms.W8S17.guards) {
-      Memory.rooms.W8S17.spawnQueue.push('guard');
+    else if (upgraderCount < Memory.rooms.E12N6.guards) {
+      Memory.rooms.E12N6.spawnQueue.push('guard');
     }
-    else if (builderCount < Memory.rooms.W8S17.builders) {
-      Memory.rooms.W8S17.spawnQueue.push('builder');
+    else if (builderCount < Memory.rooms.E12N6.builders) {
+      Memory.rooms.E12N6.spawnQueue.push('builder');
     }
-    else if (upgraderCount < Memory.rooms.W8S17.upgraders) {
-      Memory.rooms.W8S17.spawnQueue.push('upgrader');
+    else if (upgraderCount < Memory.rooms.E12N6.upgraders) {
+      Memory.rooms.E12N6.spawnQueue.push('upgrader');
     }
 
-    if ((Memory.rooms.W8S17.spawnQueue === undefined || !(Memory.rooms.W8S17.spawnQueue.length))&&
-    Game.spawns.Spawn1.canCreateCreep(partsLib.getCost(Memory.rooms.W8S17.spawnQueue[0]))) {
-      newCreep = Memory.rooms.W8S17.spawnQueue.splice(0,1);
+    if (!(Memory.rooms.E12N6.spawnQueue === undefined || Memory.rooms.E12N6.spawnQueue.length)&&
+    Game.spawns.Spawn1.canCreateCreep(partsLib.getCost(Memory.rooms.E12N6.spawnQueue[0]))) {
+      newCreep = Memory.rooms.E12N6.spawnQueue.splice(0,1);
       console.log(newCreep);
       globalFunctions.spawnCreep(newCreep);
     }
@@ -113,61 +113,61 @@ module.exports = {
 
   initArrays: function() {
 
-    if (Memory.rooms.W8S17.harvesterArray === undefined){
-      Memory.rooms.W8S17.harvesterArray = new Array();
+    if (Memory.rooms.E12N6.harvesterArray === undefined){
+      Memory.rooms.E12N6.harvesterArray = new Array();
     }
 
-    if (Memory.rooms.W8S17.builderArray === undefined) {
-      Memory.rooms.W8S17.builderArray = new Array();
+    if (Memory.rooms.E12N6.builderArray === undefined) {
+      Memory.rooms.E12N6.builderArray = new Array();
     }
 
-    if(Memory.rooms.W8S17.upgraderArray === undefined) {
-      Memory.rooms.W8S17.upgraderArray = new Array();
+    if(Memory.rooms.E12N6.upgraderArray === undefined) {
+      Memory.rooms.E12N6.upgraderArray = new Array();
     }
 
-    if (Memory.rooms.W8S17.carrierArray === undefined) {
-      Memory.rooms.W8S17.carrierArray = new Array();
+    if (Memory.rooms.E12N6.carrierArray === undefined) {
+      Memory.rooms.E12N6.carrierArray = new Array();
     }
 
-    if(Memory.rooms.W8S17.guardArray === undefined) {
-      Memory.rooms.W8S17.guardArray = new Array();
+    if(Memory.rooms.E12N6.guardArray === undefined) {
+      Memory.rooms.E12N6.guardArray = new Array();
     }
 
-    if(Memory.rooms.W8S17.extensionsArray === undefined) {
-      Memory.rooms.W8S17.extensionsArray = new Array();
+    if(Memory.rooms.E12N6.extensionsArray === undefined) {
+      Memory.rooms.E12N6.extensionsArray = new Array();
     }
 
-    if(Memory.rooms.W8S17.spawnQueue === undefined) {
-      Memory.rooms.W8S17.spawnQueue = new Array();
+    if(Memory.rooms.E12N6.spawnQueue === undefined) {
+      Memory.rooms.E12N6.spawnQueue = new Array();
     }
 
-    if(Memory.rooms.W8S17.harvesters === undefined) {
-      Memory.rooms.W8S17.harvesters = 3;
+    if(Memory.rooms.E12N6.harvesters === undefined) {
+      Memory.rooms.E12N6.harvesters = 3;
     }
 
-    if(Memory.rooms.W8S17.carriers === undefined) {
-      Memory.rooms.W8S17.carriers = 1;
+    if(Memory.rooms.E12N6.carriers === undefined) {
+      Memory.rooms.E12N6.carriers = 1;
     }
 
-    if(Memory.rooms.W8S17.builders === undefined) {
-      Memory.rooms.W8S17.builders = 0;
+    if(Memory.rooms.E12N6.builders === undefined) {
+      Memory.rooms.E12N6.builders = 0;
     }
 
-    if(Memory.rooms.W8S17.upgraders === undefined) {
-      Memory.rooms.W8S17.upgraders = 5;
+    if(Memory.rooms.E12N6.upgraders === undefined) {
+      Memory.rooms.E12N6.upgraders = 5;
     }
 
-    if(Memory.rooms.W8S17.guards === undefined) {
-      Memory.rooms.W8S17.guards = 0;
+    if(Memory.rooms.E12N6.guards === undefined) {
+      Memory.rooms.E12N6.guards = 0;
     }
 
-    var allStructures = Game.rooms.W8S17.find(FIND_MY_STRUCTURES);
+    var allStructures = Game.rooms.E12N6.find(FIND_MY_STRUCTURES);
 
     for (var structure in allStructures) {
 
       if ((allStructures[structure].structureType === STRUCTURE_EXTENSION)
-      && !(Memory.rooms.W8S17.extensionsArray[structure])) {
-        Memory.rooms.W8S17.extensionsArray.push(structure.pos);
+      && !(Memory.rooms.E12N6.extensionsArray[structure])) {
+        Memory.rooms.E12N6.extensionsArray.push(structure.pos);
       }
     }
   },

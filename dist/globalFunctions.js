@@ -14,7 +14,7 @@ module.exports = {
 
   newConstructionSite: function(structure, toPosX, toPosY, fromPosX, fromPosY, room){
     if (!room){
-      var room = Game.rooms.W8S17;
+      var room = Game.rooms.E12N6;
     }
 
     var path = false;

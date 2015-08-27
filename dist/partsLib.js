@@ -23,7 +23,7 @@ module.exports = {
 
 
 		//Add more variants when higher room level is aquired and update for more rooms
-		if(Memory.rooms.W8S17.extensionsArray.length >= 10) {						//800 energy max
+		if(Memory.rooms.E12N6.extensionsArray.length >= 10) {						//800 energy max
 
 			parts['harvester']	=	[	WORK, WORK, WORK, WORK, WORK, CARRY,
 															CARRY, CARRY, CARRY,
@@ -43,7 +43,7 @@ module.exports = {
 															MOVE, MOVE, MOVE, MOVE, MOVE ];
 
 		}
-		else if(Memory.rooms.W8S17.extensionsArray.length >= 5) {				//550 energy max
+		else if(Memory.rooms.E12N6.extensionsArray.length >= 5) {				//550 energy max
 
 			parts['harvester'] 	= [	WORK, WORK, WORK, CARRY, CARRY, CARRY, MOVE, MOVE	];
 			parts['builder'] 		= [	WORK, WORK, WORK, CARRY, CARRY, CARRY,
