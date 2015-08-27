@@ -1,6 +1,6 @@
 module.exports = {
 
-	behaviour: function(creep){
+	behavior: function(creep){
 		var targets = creep.room.find(FIND_HOSTILE_CREEPS);
 		if (targets.length){
 			creep.moveTo(targets[0]);
