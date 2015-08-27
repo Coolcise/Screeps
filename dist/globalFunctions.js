@@ -8,10 +8,7 @@ module.exports = {
     }
 
     var parts = partsLib.getCreepParts(type);
-
-    if (Game.spawns.Spawn1.energy >= partsLib.getCost(parts)){
-      location.createCreep(parts, null, {role: type});
-    }
+    location.createCreep(parts, null, {role: type});
 
   },
 

@@ -5,7 +5,9 @@ module.exports = {
     var currentRoom = creep.room;
     if (creep.carry.energy === 0 || creep.carry.energy === 1){
       creep.moveTo(Game.spawns.Spawn1);
+    if ((Game.spawns.Spawn1.energy >= (creep.carryCapacity / .75)) && !(Memory.rooms.W8S17.spawnQueue.length)){
       Game.spawns.Spawn1.transferEnergy(creep);
+    }
 
     }
     else{

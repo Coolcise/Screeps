@@ -23,47 +23,60 @@ module.exports = {
 
     for (var name in Game.creeps) {
       var role = Game.creeps[name].memory.role;
-      switch(role){
-        case 'harvester':
-          harvesterCount++;
-          break;
-        case 'builder':
-          builderCount++;
-          break;
-        case 'upgrader':
-          upgraderCount++;
-          break;
-        case 'carrier':
-          carrierCount++;
-          break;
-        case 'guard':
-          guardCount++;
-          break;
+
+      if (!role){
+         Game.creeps[name].suicide();
+         continue;
       }
+
+      switch(role[0]){
+        case 'harvester':
+        harvesterCount++;
+        break;
+        case 'builder':
+        builderCount++;
+        break;
+        case 'upgrader':
+        upgraderCount++;
+        break;
+        case 'carrier':
+        carrierCount++;
+        break;
+        case 'guard':
+        guardCount++;
+        break;
+       // case 'empty':
+        //Game.creeps[name].suicide();
+        //break;
+      }
+
     }
 
     if (!(Memory.rooms.W8S17.spawnQueue === undefined)) {
-      for (var type in Memory.rooms.W8S17.spawnQueue) {
-        var role = Memory.rooms.W8S17.spawnQueue[type];
+      for (var queue in Memory.rooms.W8S17.spawnQueue) {
+        var role = Memory.rooms.W8S17.spawnQueue[queue];
+
         switch(role){
           case 'harvester':
-            harvesterCount++;
-            break;
+          harvesterCount++;
+          break;
           case 'builder':
-            builderCount++;
-            break;
+          builderCount++;
+          break;
           case 'upgrader':
-            upgraderCount++;
-            break;
+          upgraderCount++;
+          break;
           case 'carrier':
-            carrierCount++;
-            break;
+          carrierCount++;
+          break;
           case 'guard':
-            guardCount++;
-            break;
+          guardCount++;
+          break;
         }
       }
     }
+
+    console.log(harvesterCount, builderCount, upgraderCount, guardCount);
 
     if (harvesterCount < Memory.rooms.W8S17.harvesters) {
       Memory.rooms.W8S17.spawnQueue.push('harvester');
@@ -81,9 +94,10 @@ module.exports = {
       Memory.rooms.W8S17.spawnQueue.push('upgrader');
     }
 
-    if (!(Memory.rooms.W8S17.spawnQueue === undefined || !(Memory.rooms.W8S17.spawnQueue.length))&&
+    if ((Memory.rooms.W8S17.spawnQueue === undefined || !(Memory.rooms.W8S17.spawnQueue.length))&&
     Game.spawns.Spawn1.canCreateCreep(partsLib.getCost(Memory.rooms.W8S17.spawnQueue[0]))) {
       newCreep = Memory.rooms.W8S17.spawnQueue.splice(0,1);
+      console.log(newCreep);
       globalFunctions.spawnCreep(newCreep);
     }
 

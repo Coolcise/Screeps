@@ -45,12 +45,12 @@ module.exports = {
 		}
 		else if(Memory.rooms.W8S17.extensionsArray.length >= 5) {				//550 energy max
 
-			parts['harvester'] 	= [	WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE	];
+			parts['harvester'] 	= [	WORK, WORK, WORK, CARRY, CARRY, CARRY, MOVE, MOVE	];
 			parts['builder'] 		= [	WORK, WORK, WORK, CARRY, CARRY, CARRY,
 															MOVE, MOVE	];
-			parts['upgrader']		= [	WORK, WORK, WORK, WORK, CARRY, MOVE	];
+			parts['upgrader']		= [	WORK, WORK, WORK, CARRY, CARRY, CARRY, MOVE	];
 			parts['carrier'] 		= [	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
-															CARRY, CARRY, MOVE, MOVE	];
+															CARRY, MOVE, MOVE, MOVE	];
 			parts['mule']				= [	CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
 															CARRY, CARRY, CARRY, MOVE	];
 			parts['guard'] 			= [	ATTACK, TOUGH, MOVE, MOVE	];			//TBD
